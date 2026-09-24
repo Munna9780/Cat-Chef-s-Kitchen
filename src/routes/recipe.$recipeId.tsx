@@ -40,7 +40,7 @@ function RecipePage() {
       <main>
         <section className={`${accent} border-b-2 border-foreground px-4 py-12 sm:px-6 sm:py-16 lg:px-8`}>
           <div className="mx-auto max-w-6xl">
-            <Link to="/" hash="recipes" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"><ArrowLeft className="size-4" />Back to the shelf</Link>
+            <Link to="/" search={{ q: "", cuisine: "All" }} hash="recipes" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"><ArrowLeft className="size-4" />Back to the shelf</Link>
             <div className="mt-10 grid items-end gap-8 md:grid-cols-[1fr_auto]">
               <div>
                 <p className="text-sm font-bold uppercase">{recipe.cuisine}</p>
@@ -83,5 +83,5 @@ function RecipePage() {
 }
 
 function RecipeUnavailable() {
-  return <main className="grid min-h-screen place-items-center bg-background px-4 text-center"><div><p className="text-5xl" aria-hidden="true">🙀</p><h1 className="mt-4 font-display text-4xl">That recipe left the kitchen.</h1><Link to="/" className="mt-5 inline-flex font-semibold underline">Browse all recipes</Link></div></main>;
+  return <main className="grid min-h-screen place-items-center bg-background px-4 text-center"><div><p className="text-5xl" aria-hidden="true">🙀</p><h1 className="mt-4 font-display text-4xl">That recipe left the kitchen.</h1><Link to="/" search={{ q: "", cuisine: "All" }} className="mt-5 inline-flex font-semibold underline">Browse all recipes</Link></div></main>;
 }

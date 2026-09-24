@@ -17,13 +17,13 @@ export function SiteHeader({ recipes }: { recipes: Recipe[] }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex min-w-0 items-baseline gap-2" aria-label="Cat Chef's Kitchen home">
+        <Link to="/" search={{ q: "", cuisine: "All" }} className="flex min-w-0 items-baseline gap-2" aria-label="Cat Chef's Kitchen home">
           <span className="font-display text-lg font-bold text-foreground sm:text-xl">Cat Chef's Kitchen</span>
           <span className="hidden text-xs text-muted-foreground sm:inline">recipes from everywhere</span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-3" aria-label="Main navigation">
-          <Link to="/" className="hidden px-2 py-2 text-sm font-medium text-foreground hover:text-primary sm:block">Home</Link>
-          <Link to="/" hash="recipes" className="hidden px-2 py-2 text-sm font-medium text-foreground hover:text-primary sm:block">Recipes</Link>
+          <Link to="/" search={{ q: "", cuisine: "All" }} className="hidden px-2 py-2 text-sm font-medium text-foreground hover:text-primary sm:block">Home</Link>
+          <Link to="/" search={{ q: "", cuisine: "All" }} hash="recipes" className="hidden px-2 py-2 text-sm font-medium text-foreground hover:text-primary sm:block">Recipes</Link>
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="ghost" size="sm" className="hidden sm:inline-flex">About</Button>

@@ -11,8 +11,8 @@ const suggestions = ["Pad Thai", "Butter Chicken", "Tacos al Pastor", "Ratatouil
 
 export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>) => ({
-    q: typeof search.q === "string" ? search.q.slice(0, 120) : "",
-    cuisine: typeof search.cuisine === "string" ? search.cuisine.slice(0, 40) : "All",
+    q: typeof search["q"] === "string" ? search["q"].slice(0, 120) : "",
+    cuisine: typeof search["cuisine"] === "string" ? search["cuisine"].slice(0, 40) : "All",
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(recipesQueryOptions),
   head: () => ({
