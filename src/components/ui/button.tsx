@@ -10,6 +10,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        kitchen:
+          "rounded-full border-2 border-foreground bg-foreground text-background shadow-none hover:bg-primary",
+        search:
+          "h-12 rounded-lg border-2 border-foreground bg-foreground px-5 text-background shadow-none hover:bg-primary sm:h-14 sm:px-7",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
