@@ -16,7 +16,7 @@ function getPublicClient() {
 }
 
 const recipeColumns =
-  "id,title,cuisine,time_minutes,difficulty,servings,icon,accent,tags,ingredients,steps,created_at" as const;
+  "id,title,cuisine,time_minutes,difficulty,servings,icon,accent,tags,ingredients,steps,image_url,created_at" as const;
 
 export const getRecipes = createServerFn({ method: "GET" }).handler(async () => {
   const { data, error } = await getPublicClient()
