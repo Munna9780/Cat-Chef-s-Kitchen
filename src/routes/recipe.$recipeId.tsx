@@ -49,7 +49,11 @@ function RecipePage() {
                   {recipe.tags.map((tag) => <span key={tag} className="rounded-full border border-foreground bg-background/80 px-3 py-1 text-xs font-semibold capitalize">{tag}</span>)}
                 </div>
               </div>
-              <div className="text-7xl sm:text-8xl" aria-hidden="true">{recipe.icon}</div>
+              {recipe.image_url ? (
+                <img src={recipe.image_url} alt={recipe.title} className="aspect-[4/3] w-full max-w-sm rounded-kitchen border-2 border-foreground object-cover md:w-80" />
+              ) : (
+                <div className="text-7xl sm:text-8xl" aria-hidden="true">{recipe.icon}</div>
+              )}
             </div>
           </div>
         </section>
