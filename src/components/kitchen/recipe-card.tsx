@@ -18,7 +18,7 @@ export function RecipeCard({ recipe }: { recipe: Recipe }) {
           <div className="size-full" aria-hidden="true" />
         )}
       </div>
-      <div className="flex flex-1 flex-col p-5 pt-7">
+      <div className="flex flex-1 flex-col p-5">
         <div className="mb-2 flex items-center justify-between gap-3">
           <p className="text-xs font-bold uppercase text-muted-foreground">{recipe.cuisine}</p>
           <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
