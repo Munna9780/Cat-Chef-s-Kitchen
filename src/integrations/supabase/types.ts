@@ -22,6 +22,7 @@ export type Database = {
           difficulty: string
           icon: string
           id: string
+          image_url: string | null
           ingredients: string[]
           servings: number
           steps: string[]
@@ -36,6 +37,7 @@ export type Database = {
           difficulty: string
           icon: string
           id?: string
+          image_url?: string | null
           ingredients?: string[]
           servings: number
           steps?: string[]
@@ -50,6 +52,7 @@ export type Database = {
           difficulty?: string
           icon?: string
           id?: string
+          image_url?: string | null
           ingredients?: string[]
           servings?: number
           steps?: string[]
