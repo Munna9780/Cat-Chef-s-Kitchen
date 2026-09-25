@@ -20,6 +20,10 @@ export const Route = createFileRoute("/recipe/$recipeId")({
       { title }, { name: "description", content: description },
       { property: "og:title", content: title }, { property: "og:description", content: description },
       { property: "og:type", content: "article" }, { name: "twitter:card", content: "summary_large_image" },
+      ...(loaderData?.image_url ? [
+        { property: "og:image", content: loaderData.image_url },
+        { name: "twitter:image", content: loaderData.image_url },
+      ] : []),
     ] };
   },
   component: RecipePage,
@@ -51,9 +55,7 @@ function RecipePage() {
               </div>
               {recipe.image_url ? (
                 <img src={recipe.image_url} alt={recipe.title} className="aspect-[4/3] w-full max-w-sm rounded-kitchen border-2 border-foreground object-cover md:w-80" />
-              ) : (
-                <div className="text-7xl sm:text-8xl" aria-hidden="true">{recipe.icon}</div>
-              )}
+              ) : null}
             </div>
           </div>
         </section>
