@@ -1,13 +1,25 @@
 import { createClient } from "@supabase/supabase-js";
-import { createServerFn } from "@tanstack/react-start";
-import { z } from "zod";
 import type { Database } from "@/integrations/supabase/types";
 
 export type Recipe = Database["public"]["Tables"]["recipes"]["Row"];
 
+const recipeColumns =
+  "id,title,cuisine,time_minutes,difficulty,servings,icon,accent,tags,ingredients,steps,image_url,created_at" as const;
+
+/**
+ * Public read-only client. Works in the browser (Vite-inlined VITE_* values)
+ * and during SSR (process.env), so static hosts like Netlify never depend on
+ * a server runtime being wired up for the recipe catalog.
+ */
 function getPublicClient() {
-  const url = process.env["SUPABASE_URL"];
-  const key = process.env["SUPABASE_PUBLISHABLE_KEY"] ?? process.env["SUPABASE_ANON_KEY"];
+  const env = (typeof process !== "undefined" ? process.env : {}) as Record<string, string | undefined>;
+
+  const url = import.meta.env["VITE_SUPABASE_URL"] || env["SUPABASE_URL"];
+  const key =
+    import.meta.env["VITE_SUPABASE_PUBLISHABLE_KEY"] ||
+    env["SUPABASE_PUBLISHABLE_KEY"] ||
+    env["SUPABASE_ANON_KEY"];
+
   if (!url || !key) throw new Error("The recipe library is temporarily unavailable.");
 
   return createClient<Database>(url, key, {
@@ -15,26 +27,21 @@ function getPublicClient() {
   });
 }
 
-const recipeColumns =
-  "id,title,cuisine,time_minutes,difficulty,servings,icon,accent,tags,ingredients,steps,image_url,created_at" as const;
-
-export const getRecipes = createServerFn({ method: "GET" }).handler(async () => {
+export async function getRecipes(): Promise<Recipe[]> {
   const { data, error } = await getPublicClient()
     .from("recipes")
     .select(recipeColumns)
     .order("title");
   if (error) throw new Error("We couldn't load the recipe shelf.");
-  return data;
-});
+  return data ?? [];
+}
 
-export const getRecipe = createServerFn({ method: "GET" })
-  .inputValidator((data) => z.object({ id: z.string().uuid() }).parse(data))
-  .handler(async ({ data }) => {
-    const { data: recipe, error } = await getPublicClient()
-      .from("recipes")
-      .select(recipeColumns)
-      .eq("id", data.id)
-      .maybeSingle();
-    if (error) throw new Error("We couldn't load this recipe.");
-    return recipe;
-  });
+export async function getRecipe(id: string): Promise<Recipe | null> {
+  const { data, error } = await getPublicClient()
+    .from("recipes")
+    .select(recipeColumns)
+    .eq("id", id)
+    .maybeSingle();
+  if (error) throw new Error("We couldn't load this recipe.");
+  return data;
+}
