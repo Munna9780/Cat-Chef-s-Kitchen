@@ -86,11 +86,6 @@ function HomePage() {
 
         <section id="recipes" className="scroll-mt-20 py-10 sm:py-14">
           <div className="mx-auto max-w-7xl">
-            <div className="scrollbar-none flex gap-2 overflow-x-auto px-4 pb-2 sm:px-6 lg:px-8" aria-label="Filter by cuisine">
-              {cuisines.map((item) => (
-                <Button key={item} variant={cuisine === item ? "kitchen" : "outline"} size="sm" className="shrink-0 rounded-full shadow-none" onClick={() => updateSearch({ cuisine: item })}>{item}</Button>
-              ))}
-            </div>
             <div className="mt-8 flex items-end justify-between gap-4 px-4 sm:px-6 lg:px-8">
               <div>
                 <p className="text-xs font-bold uppercase text-muted-foreground">The recipe shelf</p>
