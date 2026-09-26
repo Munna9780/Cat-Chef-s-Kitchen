@@ -15,6 +15,13 @@
       "when": 1790310287656,
       "tag": "0001_recipe_images",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790407612034,
+      "tag": "0002_recipe_images_storage_policies",
+      "breakpoints": true
     }
   ]
 }
