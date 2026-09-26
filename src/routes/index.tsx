@@ -16,7 +16,8 @@ export const Route = createFileRoute("/")({
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(recipesQueryOptions),
   head: () => ({
-    <meta name="monetag" content="4e8bb17b5537f7d55a8ae4f22c2458a3">
+    meta: [
+      { name: "monetag", content: "4e8bb17b5537f7d55a8ae4f22c2458a3" },
       { title: "Cat Chef's Kitchen — Recipes from everywhere" },
       { name: "description", content: "Search complete, cookable recipes by dish, cuisine, or ingredient." },
       { property: "og:title", content: "Cat Chef's Kitchen — Recipes from everywhere" },
