@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { RecipeCard } from "@/components/kitchen/recipe-card";
 import { SiteHeader } from "@/components/kitchen/site-header";
 import { recipesQueryOptions } from "@/lib/recipes";
+import catChef from "@/assets/cat-chef.png";
 
 const suggestions = ["Pad Thai", "Butter Chicken", "Tacos al Pastor", "Ratatouille", "Bibimbap"];
 
