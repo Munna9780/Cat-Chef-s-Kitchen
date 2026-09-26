@@ -5,7 +5,7 @@ import { Search, UtensilsCrossed, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RecipeCard } from "@/components/kitchen/recipe-card";
 import { SiteHeader } from "@/components/kitchen/site-header";
-import { cuisines, recipesQueryOptions } from "@/lib/recipes";
+import { recipesQueryOptions } from "@/lib/recipes";
 
 const suggestions = ["Pad Thai", "Butter Chicken", "Tacos al Pastor", "Ratatouille", "Bibimbap"];
 
