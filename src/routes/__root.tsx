@@ -97,6 +97,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [
+      {
+        src: "https://quge5.com/88/tag.min.js",
+        async: true,
+        "data-zone": "286947",
+        "data-cfasync": "false",
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
