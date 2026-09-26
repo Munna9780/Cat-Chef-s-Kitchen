@@ -42,20 +42,21 @@ function RecipePage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader recipes={recipes} />
       <main>
-        <section className={`${accent} border-b-2 border-foreground px-4 py-12 sm:px-6 sm:py-16 lg:px-8`}>
-          <div className="mx-auto max-w-6xl">
+        <section className={`${recipe.image_url ? "relative text-background" : accent} border-b-2 border-foreground px-4 py-12 sm:px-6 sm:py-16 lg:px-8`}>
+          {recipe.image_url ? (
+            <>
+              <img src={recipe.image_url} alt="" aria-hidden="true" className="absolute inset-0 size-full object-cover" />
+              <div className="absolute inset-0 bg-foreground/55" />
+            </>
+          ) : null}
+          <div className={`mx-auto max-w-6xl ${recipe.image_url ? "relative" : ""}`}>
             <Link to="/" search={{ q: "", cuisine: "All" }} hash="recipes" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"><ArrowLeft className="size-4" />Back to the shelf</Link>
-            <div className="mt-10 grid items-end gap-8 md:grid-cols-[1fr_auto]">
-              <div>
-                <p className="text-sm font-bold uppercase">{recipe.cuisine}</p>
-                <h1 className="mt-2 max-w-4xl font-display text-5xl font-bold leading-none sm:text-7xl">{recipe.title}</h1>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {recipe.tags.map((tag) => <span key={tag} className="rounded-full border border-foreground bg-background/80 px-3 py-1 text-xs font-semibold capitalize">{tag}</span>)}
-                </div>
+            <div className="mt-10 max-w-4xl">
+              <p className="text-sm font-bold uppercase">{recipe.cuisine}</p>
+              <h1 className="mt-2 font-display text-5xl font-bold leading-none drop-shadow-[2px_2px_0_rgba(0,0,0,0.35)] sm:text-7xl">{recipe.title}</h1>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {recipe.tags.map((tag) => <span key={tag} className="rounded-full border border-foreground bg-background/80 px-3 py-1 text-xs font-semibold capitalize text-foreground">{tag}</span>)}
               </div>
-              {recipe.image_url ? (
-                <img src={recipe.image_url} alt={recipe.title} className="aspect-[4/3] w-full max-w-sm rounded-kitchen border-2 border-foreground object-cover md:w-80" />
-              ) : null}
             </div>
           </div>
         </section>
