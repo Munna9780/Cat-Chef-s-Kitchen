@@ -99,10 +99,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        src: "https://quge5.com/88/tag.min.js",
+        src: "https://al5sm.com/tag.min.js",
         async: true,
-        "data-zone": "286947",
-        "data-cfasync": "false",
+        "data-zone": "11918174",
       },
     ],
   }),
