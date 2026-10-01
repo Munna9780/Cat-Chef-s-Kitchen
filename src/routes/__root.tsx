@@ -97,13 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
-    scripts: [
-      {
-        src: "https://al5sm.com/tag.min.js",
-        async: true,
-        "data-zone": "11918174",
-      },
-    ],
+    scripts: [],
   }),
   shellComponent: RootShell,
   component: RootComponent,
