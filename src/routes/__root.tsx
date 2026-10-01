@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        src: "https://pl31601066.profitableratecpmnetwork.com/8b/bd/b8/8bbdb83331e7a58f2d2444e211a2a377.js",
+        src: "https://pl31601383.profitableratecpmnetwork.com/82/6b/a5/826ba50d41dd4783a7d59625cae23b7f.js",
         async: true,
       },
     ],
