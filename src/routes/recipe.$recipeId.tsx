@@ -14,7 +14,7 @@ export const Route = createFileRoute("/recipe/$recipeId")({
     return recipe;
   },
   head: ({ loaderData }) => {
-    const title = loaderData ? `${loaderData.title} — Cat Chef's Kitchen` : "Recipe unavailable — Cat Chef's Kitchen";
+    const title = loaderData ? `${loaderData.title} — Chef's Table` : "Recipe unavailable — Chef's Table";
     const description = loaderData ? `Cook ${loaderData.title}, a complete ${loaderData.cuisine} recipe with ingredients and step-by-step instructions.` : "This recipe could not be found.";
     return { meta: [
       { title }, { name: "description", content: description },
@@ -84,11 +84,11 @@ function RecipePage() {
           </div>
         </section>
       </main>
-      <footer className="border-t border-line px-4 py-8 text-center text-sm text-muted-foreground">Cat Chef's Kitchen — a growing shelf of recipes, built to keep adding more.</footer>
+      <footer className="border-t border-line px-4 py-8 text-center text-sm text-muted-foreground">Chef's Table — a growing shelf of recipes, built to keep adding more.</footer>
     </div>
   );
 }
 
 function RecipeUnavailable() {
-  return <main className="grid min-h-screen place-items-center bg-background px-4 text-center"><div><p className="text-5xl" aria-hidden="true">🙀</p><h1 className="mt-4 font-display text-4xl">That recipe left the kitchen.</h1><Link to="/" search={{ q: "", cuisine: "All" }} className="mt-5 inline-flex font-semibold underline">Browse all recipes</Link></div></main>;
+  return <main className="grid min-h-screen place-items-center bg-background px-4 text-center"><div><p className="text-5xl" aria-hidden="true">🍳</p><h1 className="mt-4 font-display text-4xl">That recipe left the kitchen.</h1><Link to="/" search={{ q: "", cuisine: "All" }} className="mt-5 inline-flex font-semibold underline">Browse all recipes</Link></div></main>;
 }
