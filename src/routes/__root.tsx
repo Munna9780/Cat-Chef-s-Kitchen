@@ -79,9 +79,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Cat Chef's Kitchen" },
+      { title: "Chef's Table" },
       { name: "description", content: "Real recipes from cuisines around the world." },
-      { name: "author", content: "Cat Chef's Kitchen" },
+      { name: "author", content: "Chef's Table" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

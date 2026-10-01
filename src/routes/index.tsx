@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { RecipeCard } from "@/components/kitchen/recipe-card";
 import { SiteHeader } from "@/components/kitchen/site-header";
 import { recipesQueryOptions } from "@/lib/recipes";
-import catChef from "@/assets/cat-chef.png";
+import chefPortrait from "@/assets/chef-portrait.png";
 
 const suggestions = ["Pad Thai", "Butter Chicken", "Tacos al Pastor", "Ratatouille", "Bibimbap"];
 
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(recipesQueryOptions),
   head: () => ({
     meta: [
-      { title: "Cat Chef's Kitchen — Recipes from everywhere" },
+      { title: "Chef's Table — Recipes from everywhere" },
       { name: "description", content: "Search complete, cookable recipes by dish, cuisine, or ingredient." },
-      { property: "og:title", content: "Cat Chef's Kitchen — Recipes from everywhere" },
+      { property: "og:title", content: "Chef's Table — Recipes from everywhere" },
       { property: "og:description", content: "Search complete, cookable recipes by dish, cuisine, or ingredient." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -66,7 +66,7 @@ function HomePage() {
       <main>
         <section className="border-b border-line px-4 pb-12 pt-16 sm:px-6 sm:pb-16 sm:pt-24 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <img src={catChef} alt="Cat chef with a wooden spoon and a steaming pot" width={1024} height={1024} className="mx-auto mb-5 h-36 w-auto sm:h-48" />
+            <img src={chefPortrait} alt="Chef with a wooden spoon, arms crossed" width={1024} height={1024} className="mx-auto mb-5 h-40 w-auto drop-shadow-[0_0_40px_rgba(245,185,66,0.25)] sm:h-56" />
             <h1 className="font-display text-5xl font-bold leading-none sm:text-7xl lg:text-8xl">What are you hungry for?</h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">Search by dish, cuisine, or whatever is waiting in your pantry.</p>
             <form onSubmit={handleSubmit} className="mx-auto mt-9 flex max-w-3xl flex-col gap-3 rounded-kitchen border-2 border-foreground bg-card p-2 shadow-hard sm:flex-row">
@@ -108,7 +108,7 @@ function HomePage() {
           </div>
         </section>
       </main>
-      <footer className="border-t border-line px-4 py-8 text-center text-sm text-muted-foreground">Cat Chef's Kitchen — a growing shelf of recipes, built to keep adding more.</footer>
+      <footer className="border-t border-line px-4 py-8 text-center text-sm text-muted-foreground">Chef's Table — a growing shelf of recipes, built to keep adding more.</footer>
     </div>
   );
 }

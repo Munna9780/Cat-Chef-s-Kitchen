@@ -17,8 +17,8 @@ export function SiteHeader({ recipes }: { recipes: Recipe[] }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link to="/" search={{ q: "", cuisine: "All" }} className="flex min-w-0 items-baseline gap-2" aria-label="Cat Chef's Kitchen home">
-          <span className="font-display text-lg font-bold text-foreground sm:text-xl">Cat Chef's Kitchen</span>
+        <Link to="/" search={{ q: "", cuisine: "All" }} className="flex min-w-0 items-baseline gap-2" aria-label="Chef's Table home">
+          <span className="font-display text-lg font-bold text-foreground sm:text-xl">Chef's Table</span>
           <span className="hidden text-xs text-muted-foreground sm:inline">recipes from everywhere</span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-3" aria-label="Main navigation">
@@ -32,7 +32,7 @@ export function SiteHeader({ recipes }: { recipes: Recipe[] }) {
               <DialogHeader>
                 <DialogTitle className="font-display text-3xl">About the kitchen</DialogTitle>
                 <DialogDescription className="pt-3 text-base leading-7 text-foreground">
-                  Cat Chef's Kitchen is a shelf of real, complete recipes from cuisines around the world — search for a dish or an ingredient, browse by region, or hit Surprise me when you can't decide. Every recipe here comes with a full ingredients list and step-by-step method, no long story to scroll past.
+                  Chef's Table is a shelf of real, complete recipes from cuisines around the world — search for a dish or an ingredient, browse by region, or hit Surprise me when you can't decide. Every recipe here comes with a full ingredients list and step-by-step method, no long story to scroll past.
                 </DialogDescription>
               </DialogHeader>
             </DialogContent>
