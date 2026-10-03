@@ -46,15 +46,15 @@ function RecipePage() {
           {recipe.image_url ? (
             <>
               <img src={recipe.image_url} alt="" aria-hidden="true" className="absolute inset-0 size-full object-cover" />
-              <div className="absolute inset-0 bg-foreground/55" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/25 to-foreground/5" />
             </>
           ) : null}
           <div className={`mx-auto max-w-6xl ${recipe.image_url ? "relative" : ""}`}>
             <Link to="/" search={{ q: "", cuisine: "All" }} hash="recipes" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"><ArrowLeft className="size-4" />Back to the shelf</Link>
-            <div className="mt-10 max-w-4xl">
-              <p className="text-sm font-bold uppercase">{recipe.cuisine}</p>
-              <h1 className="mt-2 font-display text-5xl font-bold leading-none drop-shadow-[2px_2px_0_rgba(0,0,0,0.35)] sm:text-7xl">{recipe.title}</h1>
-              <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-8 max-w-4xl">
+              <p className="text-xs font-bold uppercase tracking-wide">{recipe.cuisine}</p>
+              <h1 className="mt-2 font-display text-3xl font-bold leading-tight drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] sm:text-5xl">{recipe.title}</h1>
+              <div className="mt-4 flex flex-wrap gap-2">
                 {recipe.tags.map((tag) => <span key={tag} className="rounded-full border border-foreground bg-background/80 px-3 py-1 text-xs font-semibold capitalize text-foreground">{tag}</span>)}
               </div>
             </div>
