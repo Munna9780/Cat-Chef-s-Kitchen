@@ -26,6 +26,11 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "monetag", content: "add361641b6958bcaf3a620e2878ef57" },
     ],
+    scripts: [
+      {
+        children: "(function(s){s.dataset.zone='11945403',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))",
+      },
+    ],
   }),
   component: HomePage,
   errorComponent: () => <LoadFailure />,
@@ -74,13 +79,15 @@ function HomePage() {
               <label className="flex min-w-0 flex-1 items-center gap-3 px-3">
                 <Search className="size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
                 <span className="sr-only">Search recipes</span>
-                <input name="query" defaultValue={q} key={q} className="h-12 w-full bg-transparent text-base outline-none placeholder:text-muted-foreground" placeholder="Try chickpeas, spicy, or Thai…" />
+                <input name="query" defaultValue={q} key={q} className="h-12 w-full bg-transparent text-base outline-none placeholder:text-muted-foreground" placeholder="Try chickpeas, spicy, or Thai" />
               </label>
               <Button type="submit" variant="search">Find a recipe</Button>
             </form>
             <div className="mt-7 flex flex-wrap justify-center gap-2" aria-label="Quick searches">
               {suggestions.map((suggestion) => (
-                <Button key={suggestion} variant="outline" size="sm" className="rounded-full border-line bg-transparent shadow-none hover:border-foreground" onClick={() => updateSearch({ q: suggestion })}>{suggestion}</Button>
+                <Button key={suggestion} variant="outline" size="sm" className="rounded-full border-line bg-transparent shadow-none hover:border-foreground" onClick={() => updateSearch({ q: suggestion })}>
+                  {suggestion}
+                </Button>
               ))}
             </div>
           </div>
@@ -115,5 +122,5 @@ function HomePage() {
 }
 
 function LoadFailure() {
-  return <main className="grid min-h-screen place-items-center bg-background px-4 text-center"><div><h1 className="font-display text-4xl">The kitchen is taking a breather.</h1><p className="mt-3 text-muted-foreground">Please refresh and try the recipe shelf again.</p></div></main>;
+  return <main className="grid min-h-screen place-items-center bg-background px-4 text-center"><div><h1 className="font-display text-4xl">The kitchen is taking a breather.</h1><p className="mt-3 text-muted-foreground">Try refreshing the page in a moment.</p></div></main>;
 }
