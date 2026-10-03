@@ -24,6 +24,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Search complete, cookable recipes by dish, cuisine, or ingredient." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "monetag", content: "add361641b6958bcaf3a620e2878ef57" },
     ],
   }),
   component: HomePage,
